@@ -1,5 +1,11 @@
 
 public class Ship {
+	
+	/**
+		 * @author marc-antoine
+		 *
+		 */
+	
 	private String shipName;
 	private int shipSize;
 	private int shipLives;
@@ -7,9 +13,15 @@ public class Ship {
 	private boolean sinkShip;
 	private Coordinates shipCoordinates;
 	private Orientation shipOrientation;
+	/*private Ship carrier;
+	private Ship battleship;
+	private Ship cruiser;
+	private Ship submarine;
+	private Ship destroyer;
 	
-	private class Carrier {
-		//this.shipSize=5; 
+	
+	private Ship carrier {
+		this.shipSize=5; 
 	}
 	
 	private class BattleShip {
@@ -26,7 +38,31 @@ public class Ship {
 	
 	private class Destroyer {
 		
+	}*/
+	
+	
+	
+	public class ShipSize {
+
+		/**
+		 * 
+		 */
+		private ShipSize() {
+			
+		}
+		
+
+		/**
+		 * @param args
+		 */
+		public void main(String[] args) {
+			// TODO Auto-generated method stub
+
+		}
+
 	}
+
+	
 	public Ship(String startCoord, String endCoord) {
 		
 	}
