@@ -8,9 +8,7 @@ public class Ship {
 	private Coordinates shipCoordinates;
 	private Orientation shipOrientation;
 	
-	public class Orientation{
-		
-	}
+	
 	public Ship(String startCoord, String endCoord) {
 		
 	}
@@ -19,71 +17,112 @@ public class Ship {
 		// TODO Auto-generated method stub
 
 	}
-	
-	public void ShipLength() {
-	    }
 
-	    public String getShipName() {
+	/**
+	 * @return the shipName
+	 */
+	public String getShipName() {
 		return shipName;
 	}
 
+	/**
+	 * @param shipName the shipName to set
+	 */
 	public void setShipName(String shipName) {
 		this.shipName = shipName;
 	}
 
-		public int getShipSize() {
+	/**
+	 * @return the shipSize
+	 */
+	public int getShipSize() {
 		return shipSize;
 	}
 
+	/**
+	 * @param shipSize the shipSize to set
+	 */
 	public void setShipSize(int shipSize) {
 		this.shipSize = shipSize;
 	}
 
-		public int getShipLives() {
-		return shipLives;
-	}
-
-	public void setShipLives(int shipLives) {
-		this.shipLives = shipLives;
-	}
-
-		public Coordinates getShipCoordinates() {
-		return shipCoordinates;
-	}
-
-	public void setShipCoordinates(Coordinates shipCoordinates) {
-		this.shipCoordinates = shipCoordinates;
-	}
-
-		public Orientation getShipOrientation() {
+	/**
+	 * @return the shipOrientation
+	 */
+	public Orientation getShipOrientation() {
 		return shipOrientation;
 	}
 
+	/**
+	 * @param shipOrientation the shipOrientation to set
+	 */
 	public void setShipOrientation(Orientation shipOrientation) {
 		this.shipOrientation = shipOrientation;
 	}
 
-		public boolean isHittenShip() {
-		return hittenShip;
+	/**
+	 * @return the shipLives
+	 */
+	public int getShipLives() {
+		return shipLives;
 	}
 
-	public void setHittenShip(boolean hittenShip) {
-		this.hittenShip = hittenShip;
+	/**
+	 * @param shipLives the shipLives to set
+	 */
+	public void setShipLives(int shipLives) {
+		this.shipLives = shipLives;
 	}
 
-		public boolean isSinkShip() {
+	/**
+	 * @return the sinkShip
+	 */
+	public boolean isSinkShip() {
 		return sinkShip;
 	}
 
+	/**
+	 * @param sinkShip the sinkShip to set
+	 */
 	public void setSinkShip(boolean sinkShip) {
 		this.sinkShip = sinkShip;
 	}
 
-		public static final int CARRIER = 5;
+	/**
+	 * @return the hittenShip
+	 */
+	public boolean isHittenShip() {
+		return hittenShip;
+	}
+
+	/**
+	 * @param hittenShip the hittenShip to set
+	 */
+	public void setHittenShip(boolean hittenShip) {
+		this.hittenShip = hittenShip;
+	}
+
+	/**
+	 * @return the shipCoordinates
+	 */
+	public Coordinates getShipCoordinates() {
+		return shipCoordinates;
+	}
+
+	/**
+	 * @param shipCoordinates the shipCoordinates to set
+	 */
+	public void setShipCoordinates(Coordinates shipCoordinates) {
+		this.shipCoordinates = shipCoordinates;
+	}
+	
+	
+
+		/*public static final int CARRIER = 5;
 	    public static final int BATTLESHIP = 4;
 	    public static final int CRUISER = 3;
 	    public static final int SUBMARINE = 3;
-	    public static final int DESTROYER = 2;
+	    public static final int DESTROYER = 2;*/
 	
 
 }
