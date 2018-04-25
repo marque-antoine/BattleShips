@@ -8,7 +8,25 @@ public class Ship {
 	private Coordinates shipCoordinates;
 	private Orientation shipOrientation;
 	
+	private class Carrier {
+		//this.shipSize=5; 
+	}
 	
+	private class BattleShip {
+		
+	}
+	
+	private class Cruiser {
+		
+	}
+	
+	private class Submarine  {
+		
+	}
+	
+	private class Destroyer {
+		
+	}
 	public Ship(String startCoord, String endCoord) {
 		
 	}
@@ -116,7 +134,16 @@ public class Ship {
 		this.shipCoordinates = shipCoordinates;
 	}
 	
+	/**
+	 * @return the shipName
+	 */
+	public String getName(){
+		return this.shipName;
+	}
 	
+	public int getSize() {
+		return 0;
+	}
 
 		/*public static final int CARRIER = 5;
 	    public static final int BATTLESHIP = 4;
