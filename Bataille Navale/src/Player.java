@@ -3,9 +3,13 @@ public class Player {
 	private String playerName;
 	private Fleet playerFleet;
 	private Grid playerGrid;
+	private int livesRemaining = 17;
 	
-	public Player() {
-		// TODO Auto-generated constructor stub
+	public Player(String playerName, Fleet playerFleet, Grid playerGrid) {
+		super();
+		this.playerName=playerName;
+		this.playerFleet=playerFleet;
+		this.playerGrid=playerGrid;
 	}
 
 	public static void main(String[] args) {
@@ -34,12 +38,14 @@ public class Player {
 		return playerFleet;
 	}
 
-	/**
+	/*
 	 * @param playerFleet the playerFleet to set
-	 */
+	 
 	public void setPlayerFleet(Fleet playerFleet) {
 		this.playerFleet = playerFleet;
-	}
+	} 
+	
+	*/
 
 	/**
 	 * @return the playerGrid
@@ -48,13 +54,25 @@ public class Player {
 		return playerGrid;
 	}
 
-	/**
-	 * @param playerGrid the playerGrid to set
-	 */
-	public void setPlayerGrid(Grid playerGrid) {
-		this.playerGrid = playerGrid;
+	public Coordinates makeGuess() {
+		return null;
+		 
+	}
+	
+	public int getPlayerShipsNumber() {
+		return Fleet.getNbShipsFleet();
+	}
+	
+	public int getRemainingShipsNumber() {
+		return Fleet.getRemainingShipsNumber();
 	}
 
+	public int getPlayerLivesRemaining() {
+		return livesRemaining;
+	}
 	
+	public void placePlayerShips() {
+		
+	}
 
 }

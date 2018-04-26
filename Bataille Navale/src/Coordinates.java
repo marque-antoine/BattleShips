@@ -1,62 +1,55 @@
+/**
+ * 
+ */
 
+/**
+ * @author marc-antoine
+ *
+ */
 public class Coordinates {
-	private String x;
-	private String y;
-	private String[][] coordinates;
-	
-
-	public Coordinates(String x, String y) {
-		this.setX(x);
-		this.setY(y);
+	private int horizontalCoordinates;
+	private String verticalCoordinates;
+	/**
+	 * 
+	 */
+	public Coordinates() {
+		// TODO Auto-generated constructor stub
 	}
 
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
 
-	
-
 	/**
-	 * @return the coordinates
+	 * @return the horizontal
 	 */
-	public String[][] getCoordinates() {
-		return coordinates;
+	public int getHorizontal() {
+		return horizontalCoordinates;
 	}
 
 	/**
-	 * @param coordinates the coordinates to set
+	 * @param horizontal the horizontal to set
 	 */
-	public void setCoordinates(String[][] coordinates) {
-		this.coordinates = coordinates;
+	public void setHorizontal(int horizontal) {
+		this.horizontalCoordinates = horizontal;
 	}
 
 	/**
-	 * @return the x
+	 * @return the vertical
 	 */
-	public String getX() {
-		return x;
+	public String getVertical() {
+		return verticalCoordinates;
 	}
 
 	/**
-	 * @param x the x to set
+	 * @param vertical the vertical to set
 	 */
-	public void setX(String x) {
-		this.x = x;
-	}
-
-	/**
-	 * @return the y
-	 */
-	public String getY() {
-		return y;
-	}
-
-	/**
-	 * @param y the y to set
-	 */
-	public void setY(String y) {
-		this.y = y;
+	public void setVertical(String vertical) {
+		this.verticalCoordinates = vertical;
 	}
 
 }

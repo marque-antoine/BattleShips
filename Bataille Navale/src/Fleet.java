@@ -1,13 +1,17 @@
+import java.util.List;
 
 public class Fleet {
-	private int nbShipsFleet;
-	private Ship shipsInFleet;
+	private static int nbShipsFleet = 5;
+	private static int remainingShipsNumber = nbShipsFleet;
+	private List<Ship> shipsInFleet;
 	private Player playersFleet;
 	
 	
 
-	public Fleet() {
-		// TODO Auto-generated constructor stub
+	public Fleet(List<Ship> shipsInFleet, Player playersFleet) {
+		super();
+		this.shipsInFleet = shipsInFleet;
+		this.playersFleet = playersFleet;
 	}
 
 	public static void main(String[] args) {
@@ -32,21 +36,21 @@ public class Fleet {
 	/**
 	 * @return the shipsInFleet
 	 */
-	public Ship getShipsInFleet() {
+	public List<Ship> getShipsInFleet() {
 		return shipsInFleet;
 	}
 
 	/**
 	 * @param shipsInFleet the shipsInFleet to set
 	 */
-	public void setShipsInFleet(Ship shipsInFleet) {
+	public void setShipsInFleet(List<Ship> shipsInFleet) {
 		this.shipsInFleet = shipsInFleet;
 	}
 
 	/**
 	 * @return the nbShipsFleet
 	 */
-	public int getNbShipsFleet() {
+	public static int getNbShipsFleet() {
 		return nbShipsFleet;
 	}
 
@@ -54,8 +58,24 @@ public class Fleet {
 	 * @param nbShipsFleet the nbShipsFleet to set
 	 */
 	public void setNbShipsFleet(int nbShipsFleet) {
-		this.nbShipsFleet = nbShipsFleet;
+		Fleet.nbShipsFleet = nbShipsFleet;
 	}
+
+	/**
+	 * @return the remainingShipsNumber
+	 */
+	public static int getRemainingShipsNumber() {
+		return remainingShipsNumber;
+	}
+
+	/**
+	 * @param remainingShipsNumber the remainingShipsNumber to set
+	 */
+	public static void setRemainingShipsNumber(int remainingShipsNumber) {
+		Fleet.remainingShipsNumber = remainingShipsNumber;
+	}
+
+
 
 	
 

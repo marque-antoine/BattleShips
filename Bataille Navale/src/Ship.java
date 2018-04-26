@@ -1,71 +1,122 @@
 
 public class Ship {
-	
+
 	/**
-		 * @author marc-antoine
-		 *
-		 */
-	
+	 * @author marc-antoine
+	 *
+	 */
 	private String shipName;
 	private int shipSize;
 	private int shipLives;
+	private String shipOrientation;
 	private boolean hittenShip;
 	private boolean sinkShip;
-	private Coordinates shipCoordinates;
-	private Orientation shipOrientation;
-	/*private Ship carrier;
-	private Ship battleship;
-	private Ship cruiser;
-	private Ship submarine;
-	private Ship destroyer;
+	private Coordinates startCoordinate;
+	private Coordinates endCoordinate;
 	
-	
-	private Ship carrier {
-		this.shipSize=5; 
+	public class Carrier {
+		
+		private int shipSize= 5;
+		private String shipName= "carrier";
+		
+		public int getShipSize() {
+			return shipSize;
+		}
+		
+		public String getShipName() {
+			return shipName;
+		}
 	}
 	
-	private class BattleShip {
+	public class Battleship {
+		
+		private int shipSize=4;
+		private String shipName="battleship";
+		
+		public int getShipSize() {
+			return shipSize;
+		}
+		public String getShipName() {
+			return shipName;
+		}
 		
 	}
 	
-	private class Cruiser {
+	public class Cruiser {
+		
+		private int shipSize=3;
+		private String shipName="cruiser";
+		
+		public int getShipSize() {
+			return shipSize;
+		}
+		
+		public String getShipName() {
+			return shipName;
+		}
+		
 		
 	}
-	
-	private class Submarine  {
-		
-	}
-	
-	private class Destroyer {
-		
-	}*/
-	
-	
-	
-	public class ShipSize {
 
-		/**
-		 * 
-		 */
-		private ShipSize() {
+	public class Submarine {
+		
+		private int shipSize=2;
+		private String shipName="submarine";
+		
+		public int getShipSize() {
+			return shipSize;
+		}
+		public String getShipName() {
+			return shipName;
+		}		
+	}
+	
+	public class Destroyer {
+		
+		private int shipSize=1;
+		private String shipName="destroyer";
+		
+		public int getShipSize() {
+			return shipSize;
+		}
+		public String getShipName() {
+			return shipName;
+		}		
+	}
+
+	public static class Orientation {
+		public static final String vertical = "vertical";
+		public static final String horizontal = "horizontal";
+		
+		public Orientation() {
 			
 		}
 		
 
-		/**
-		 * @param args
-		 */
-		public void main(String[] args) {
-			// TODO Auto-generated method stub
-
-		}
-
-	}
-
-	
-	public Ship(String startCoord, String endCoord) {
 		
 	}
+
+
+	
+	/**
+	 * 
+	 * @param shipName
+	 *            define the name of the ship
+	 * @param shipSize
+	 *            define the size of the ship and his initial lives
+	 */
+	public Ship(String shipName, int shipSize, String shipOrientation, Coordinates startCoordinate, Coordinates endCoordinate) {
+		super();
+		this.shipName = shipName;
+		this.shipSize = shipSize;
+		this.shipLives = shipSize;
+		this.startCoordinate = startCoordinate;
+		this.endCoordinate = endCoordinate;
+	}
+
+	// public Ship(String startCoord, String endCoord) {
+
+	// }
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -79,12 +130,13 @@ public class Ship {
 		return shipName;
 	}
 
-	/**
+	/*
+	 * /**
+	 * 
 	 * @param shipName the shipName to set
+	 * 
+	 * public void setShipName(String shipName) { this.shipName = shipName; }
 	 */
-	public void setShipName(String shipName) {
-		this.shipName = shipName;
-	}
 
 	/**
 	 * @return the shipSize
@@ -94,23 +146,17 @@ public class Ship {
 	}
 
 	/**
-	 * @param shipSize the shipSize to set
-	 */
-	public void setShipSize(int shipSize) {
-		this.shipSize = shipSize;
-	}
-
-	/**
 	 * @return the shipOrientation
 	 */
-	public Orientation getShipOrientation() {
+	public String getShipOrientation() {
 		return shipOrientation;
 	}
 
 	/**
-	 * @param shipOrientation the shipOrientation to set
+	 * @param shipOrientation
+	 *            the shipOrientation to set
 	 */
-	public void setShipOrientation(Orientation shipOrientation) {
+	public void setShipOrientation(String shipOrientation) {
 		this.shipOrientation = shipOrientation;
 	}
 
@@ -121,12 +167,13 @@ public class Ship {
 		return shipLives;
 	}
 
-	/**
+	/*
+	 * /**
+	 * 
 	 * @param shipLives the shipLives to set
+	 * 
+	 * public void setShipLives(int shipLives) { this.shipLives = shipLives; }
 	 */
-	public void setShipLives(int shipLives) {
-		this.shipLives = shipLives;
-	}
 
 	/**
 	 * @return the sinkShip
@@ -136,7 +183,8 @@ public class Ship {
 	}
 
 	/**
-	 * @param sinkShip the sinkShip to set
+	 * @param sinkShip
+	 *            the sinkShip to set
 	 */
 	public void setSinkShip(boolean sinkShip) {
 		this.sinkShip = sinkShip;
@@ -150,42 +198,53 @@ public class Ship {
 	}
 
 	/**
-	 * @param hittenShip the hittenShip to set
+	 * @param hittenShip
+	 *            the hittenShip to set
 	 */
 	public void setHittenShip(boolean hittenShip) {
 		this.hittenShip = hittenShip;
 	}
 
-	/**
-	 * @return the shipCoordinates
-	 */
-	public Coordinates getShipCoordinates() {
-		return shipCoordinates;
-	}
-
-	/**
-	 * @param shipCoordinates the shipCoordinates to set
-	 */
-	public void setShipCoordinates(Coordinates shipCoordinates) {
-		this.shipCoordinates = shipCoordinates;
-	}
 	
 	/**
 	 * @return the shipName
 	 */
-	public String getName(){
+	public String getName() {
 		return this.shipName;
 	}
-	
-	public int getSize() {
-		return 0;
+
+	/**
+	 * @return the startCoordinate
+	 */
+	public Coordinates getStartCoordinate() {
+		return startCoordinate;
 	}
 
-		/*public static final int CARRIER = 5;
-	    public static final int BATTLESHIP = 4;
-	    public static final int CRUISER = 3;
-	    public static final int SUBMARINE = 3;
-	    public static final int DESTROYER = 2;*/
-	
+	/**
+	 * @param startCoordinate the startCoordinate to set
+	 */
+	public void setStartCoordinate(Coordinates startCoordinate) {
+		this.startCoordinate = startCoordinate;
+	}
+
+	/**
+	 * @return the endCoordinate
+	 */
+	public Coordinates getEndCoordinate() {
+		return endCoordinate;
+	}
+
+	/**
+	 * @param endCoordinate the endCoordinate to set
+	 */
+	public void setEndCoordinate(Coordinates endCoordinate) {
+		this.endCoordinate = endCoordinate;
+	}
+
+	/*
+	 * public static final int CARRIER = 5; public static final int BATTLESHIP = 4;
+	 * public static final int CRUISER = 3; public static final int SUBMARINE = 3;
+	 * public static final int DESTROYER = 2;
+	 */
 
 }
