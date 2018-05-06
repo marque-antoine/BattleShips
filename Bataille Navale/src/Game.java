@@ -1,16 +1,15 @@
 
 public class Game {
 	private Player gameWinner;
-	private Player gameTurn;
+	private Player currentPlayer;
 	private Player playerOne;
 	private Player playerTwo;
 	
 	
 	public Game() {
-		playerOne=new Player();
-		playerTwo=new Player();
-		this.gameTurn=playerOne;
-		
+		playerOne=new Player("Bobby");
+		playerTwo=new Player("Alphonse");
+		this.setCurrentPlayer(playerOne);
 	}
 	/**
 	 * @return the gameWinner
@@ -19,27 +18,8 @@ public class Game {
 		return gameWinner;
 	}
 
-	/**
-	 * @param gameWinner the gameWinner to set
-	 */
-	public void setGameWinner(Player gameWinner) {
-		this.gameWinner = gameWinner;
-	}
 
-	/**
-	 * @return the gameTurn
-	 */
-	public Player getGameTurn() {
-		return gameTurn;
-	}
-
-	/**
-	 * @param gameTurn the gameTurn to set
-	 */
-	public void setGameTurn(Player gameTurn) {
-		this.gameTurn = gameTurn;
-	}
-
+	
 	/**
 	 * @return the playerOne
 	 */
@@ -74,8 +54,35 @@ public class Game {
 
 	}
 	
-	public void start() {
-		//System.out.println("lol");
+	public void setup() {
+		playerOne.placeShips();
+		playerTwo.placeShips();
+	}
+	
+	public void play() {
+		currentPlayer.makeGuess();
+		if(currentPlayer==playerOne) {
+			currentPlayer=playerTwo;
+		}
+		else
+			currentPlayer=playerOne;
+	}
+	
+	public static boolean isOver() {
+		boolean isOver=false
+			if()
+	}
+	/**
+	 * @return the currentPlayer
+	 */
+	public Player getCurrentPlayer() {
+		return currentPlayer;
+	}
+	/**
+	 * @param currentPlayer the currentPlayer to set
+	 */
+	public void setCurrentPlayer(Player currentPlayer) {
+		this.currentPlayer = currentPlayer;
 	}
 
 

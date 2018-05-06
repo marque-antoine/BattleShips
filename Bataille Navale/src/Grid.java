@@ -9,17 +9,17 @@ public class Grid {
 	public Grid() {
 		map=new GridLegend[height][width];
 		for (int i=0;i<height;i++) {
-			for (int j=0;i<width;i++) {
+			for (int j=0;j<width;j++) {
 				map[i][j]=GridLegend.WATER;
 			}
 		}
 	}
 	
 	public void addShip(Ship ship) {
-		int x1 =Integer.valueOf(ship.getStartCoordinate().getxCoordinates());
-		int y1=ship.getStartCoordinate().getyCoordinates();
-		int x2=Integer.valueOf(ship.getEndCoordinate().getxCoordinates());
-		int y2=ship.getEndCoordinate().getyCoordinates();
+		int x1 =Integer.valueOf(ship.getStartCoordinate().getxCoordinates() - 65);
+		int y1=ship.getStartCoordinate().getyCoordinates()-1;//On enlève 1 car la grille commence à 0
+		int x2=Integer.valueOf(ship.getEndCoordinate().getxCoordinates() - 65);
+		int y2=ship.getEndCoordinate().getyCoordinates()-1;
 		if(x1==x2) {
 			if(y1<=y2) {
 				for(int i=y1;i<=y2;i++) {
@@ -47,26 +47,40 @@ public class Grid {
 		}
 	
 	public void drawGrid() {
-		for (int i=0;i<height;i++) {
-			for (int j=0;j<width;i++) {
+
+		System.out.print("Voici la grille actuelle :\n  ");
+		for (int j=1;j<=height;j++) {
+			System.out.print(" "+ j);
+		}
+		System.out.print(" \n");
+		for (int j=0;j<height;j++) {
+			System.out.print(j+1 + "  ");
+			for (int i=0;i<width;i++) {
 				GridLegend square = map[i][j];
 				if(square==GridLegend.FIRED) {
-					System.out.print("X");
+					System.out.print("X ");
 				}
 				else if (square==GridLegend.SHIP) {
-					System.out.print("O");
+					System.out.print("O ");
 				}
 				else if (square==GridLegend.SINKED) {
-					System.out.print("@");
+					System.out.print("@ ");
 				}
 				else if (square==GridLegend.WATER) {
-					System.out.print("~");
+					System.out.print("~ ");
 				}
 				else if (square==GridLegend.HITTEN) {
-					System.out.print("0");
+					System.out.print("0 ");
 				}
 			}
 			System.out.print("\n");
 		}
 	}
+	
+	public static boolean emptyCoordinate() {
+		boolean empty=true;
+		return empty;
+	}
+	
+	
 }

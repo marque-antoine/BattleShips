@@ -5,19 +5,22 @@ public class Ship {
 	 * @author marc-antoine
 	 *
 	 */
-	private String shipName;
-	private int shipSize;
-	private int shipLives;
+	
+	private static int shipLives;
 	private String shipOrientation;
-	private boolean hittenShip;
-	private boolean sinkShip;
+	private static boolean sinkShip;
 	private Coordinates startCoordinate;
 	private Coordinates endCoordinate;
 	
-	public class Carrier {
+	public static class Carrier extends Ship {
 		
-		private int shipSize= 5;
+		private static final int shipSize= 5;
 		private String shipName= "carrier";
+		
+		public Carrier(Coordinates startCoordinate, Coordinates endCoordinate) {
+			super(startCoordinate, endCoordinate);
+			this.setShipLives(Carrier.shipSize);
+		}
 		
 		public int getShipSize() {
 			return shipSize;
@@ -28,11 +31,20 @@ public class Ship {
 		}
 	}
 	
-	public class Battleship {
+	public static class Battleship extends Ship {
 		
 		private int shipSize=4;
 		private String shipName="battleship";
 		
+		public Battleship(Coordinates startCoordinate, Coordinates endCoordinate) {
+			super(startCoordinate, endCoordinate);
+			this.setShipLives(Carrier.shipSize);
+			
+		}
+		
+		
+		
+		
 		public int getShipSize() {
 			return shipSize;
 		}
@@ -42,11 +54,18 @@ public class Ship {
 		
 	}
 	
-	public class Cruiser {
+	public static class Cruiser extends Ship {
 		
 		private int shipSize=3;
 		private String shipName="cruiser";
 		
+		public Cruiser(Coordinates startCoordinate, Coordinates endCoordinate) {
+			super(startCoordinate, endCoordinate);
+			this.setShipLives(Carrier.shipSize);
+		}
+
+		
+		
 		public int getShipSize() {
 			return shipSize;
 		}
@@ -58,10 +77,16 @@ public class Ship {
 		
 	}
 
-	public class Submarine {
+	public static class Submarine extends Ship {
 		
 		private int shipSize=2;
 		private String shipName="submarine";
+		
+		public Submarine(Coordinates startCoordinate, Coordinates endCoordinate) {
+			super(startCoordinate, endCoordinate);
+			this.setShipLives(Carrier.shipSize);
+		}
+		
 		
 		public int getShipSize() {
 			return shipSize;
@@ -71,10 +96,16 @@ public class Ship {
 		}		
 	}
 	
-	public class Destroyer {
+	public static class Destroyer extends Ship {
 		
 		private int shipSize=1;
 		private String shipName="destroyer";
+		
+		public Destroyer(Coordinates startCoordinate, Coordinates endCoordinate) {
+			super(startCoordinate, endCoordinate);
+			this.setShipLives(Carrier.shipSize);
+		}
+		
 		
 		public int getShipSize() {
 			return shipSize;
@@ -84,19 +115,13 @@ public class Ship {
 		}		
 	}
 
-	public static class Orientation {
-		public static final String vertical = "vertical";
-		public static final String horizontal = "horizontal";
-		
-		public Orientation() {
-			
-		}
 		
 
+
+	public static void hitShip() {
+		shipLives=shipLives-1;
 		
 	}
-
-
 	
 	/**
 	 * 
@@ -105,11 +130,8 @@ public class Ship {
 	 * @param shipSize
 	 *            define the size of the ship and his initial lives
 	 */
-	public Ship(String shipName, int shipSize, String shipOrientation, Coordinates startCoordinate, Coordinates endCoordinate) {
+	public Ship(Coordinates startCoordinate, Coordinates endCoordinate) {
 		super();
-		this.shipName = shipName;
-		this.shipSize = shipSize;
-		this.shipLives = shipSize;
 		this.startCoordinate = startCoordinate;
 		this.endCoordinate = endCoordinate;
 	}
@@ -123,95 +145,6 @@ public class Ship {
 
 	}
 
-	/**
-	 * @return the shipName
-	 */
-	public String getShipName() {
-		return shipName;
-	}
-
-	/*
-	 * /**
-	 * 
-	 * @param shipName the shipName to set
-	 * 
-	 * public void setShipName(String shipName) { this.shipName = shipName; }
-	 */
-
-	/**
-	 * @return the shipSize
-	 */
-	public int getShipSize() {
-		return shipSize;
-	}
-
-	/**
-	 * @return the shipOrientation
-	 */
-	public String getShipOrientation() {
-		return shipOrientation;
-	}
-
-	/**
-	 * @param shipOrientation
-	 *            the shipOrientation to set
-	 */
-	public void setShipOrientation(String shipOrientation) {
-		this.shipOrientation = shipOrientation;
-	}
-
-	/**
-	 * @return the shipLives
-	 */
-	public int getShipLives() {
-		return shipLives;
-	}
-
-	/*
-	 * /**
-	 * 
-	 * @param shipLives the shipLives to set
-	 * 
-	 * public void setShipLives(int shipLives) { this.shipLives = shipLives; }
-	 */
-
-	/**
-	 * @return the sinkShip
-	 */
-	public boolean isSinkShip() {
-		return sinkShip;
-	}
-
-	/**
-	 * @param sinkShip
-	 *            the sinkShip to set
-	 */
-	public void setSinkShip(boolean sinkShip) {
-		this.sinkShip = sinkShip;
-	}
-
-	/**
-	 * @return the hittenShip
-	 */
-	public boolean isHittenShip() {
-		return hittenShip;
-	}
-
-	/**
-	 * @param hittenShip
-	 *            the hittenShip to set
-	 */
-	public void setHittenShip(boolean hittenShip) {
-		this.hittenShip = hittenShip;
-	}
-
-	
-	/**
-	 * @return the shipName
-	 */
-	public String getName() {
-		return this.shipName;
-	}
 
 	/**
 	 * @return the startCoordinate
@@ -241,5 +174,35 @@ public class Ship {
 		this.endCoordinate = endCoordinate;
 	}
 
+	/**
+	 * @return the shipLives
+	 */
+	public int getShipLives() {
+		return shipLives;
+	}
+
+	/**
+	 * @param shipLives the shipLives to set
+	 */
+	public void setShipLives(int shipLives) {
+		this.shipLives = shipLives;
+	}
+
+	/**
+	 * @return the sinkShip
+	 */
+	public static boolean isSinkShip() {
+		if(Ship.shipLives<1) {
+			return true;
+		}
+	
+	}
+
+	/**
+	 * @param sinkShip the sinkShip to set
+	 */
+	public void setSinkShip(boolean sinkShip) {
+		
+	}
 
 }
