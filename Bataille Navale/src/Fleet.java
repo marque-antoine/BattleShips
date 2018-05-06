@@ -4,34 +4,24 @@ public class Fleet {
 	private static int nbShipsFleet = 5;
 	private static int remainingShipsNumber = nbShipsFleet;
 	private List<Ship> shipsInFleet;
-	private Player playersFleet;
+	
 	
 	
 
-	public Fleet(List<Ship> shipsInFleet, Player playersFleet) {
-		super();
-		this.shipsInFleet = shipsInFleet;
-		this.playersFleet = playersFleet;
+	public Fleet() {
+		
+
 	}
+	
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// TODO Auto-geneprated method stub
 
 	}
 
 	/**
 	 * @return the playersFleet
 	 */
-	public Player getPlayersFleet() {
-		return playersFleet;
-	}
-
-	/**
-	 * @param playersFleet the playersFleet to set
-	 */
-	public void setPlayersFleet(Player playersFleet) {
-		this.playersFleet = playersFleet;
-	}
 
 	/**
 	 * @return the shipsInFleet

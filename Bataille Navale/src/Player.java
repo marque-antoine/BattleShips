@@ -5,11 +5,11 @@ public class Player {
 	private Grid playerGrid;
 	private int livesRemaining = 17;
 	
-	public Player(String playerName, Fleet playerFleet, Grid playerGrid) {
-		super();
-		this.playerName=playerName;
-		this.playerFleet=playerFleet;
-		this.playerGrid=playerGrid;
+	public Player() {
+		playerFleet= new Fleet();
+		playerGrid= new Grid();
+		
+
 	}
 
 	public static void main(String[] args) {

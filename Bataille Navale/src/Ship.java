@@ -228,7 +228,7 @@ public class Ship {
 	}
 
 	/**
-	 * @return the endCoordinate
+	 * @return the endCoordinat
 	 */
 	public Coordinates getEndCoordinate() {
 		return endCoordinate;
@@ -241,10 +241,5 @@ public class Ship {
 		this.endCoordinate = endCoordinate;
 	}
 
-	/*
-	 * public static final int CARRIER = 5; public static final int BATTLESHIP = 4;
-	 * public static final int CRUISER = 3; public static final int SUBMARINE = 3;
-	 * public static final int DESTROYER = 2;
-	 */
 
 }

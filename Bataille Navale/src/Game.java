@@ -5,19 +5,13 @@ public class Game {
 	private Player playerOne;
 	private Player playerTwo;
 	
-	public Game() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 	
-	public void start() {
-		//System.out.println("lol");
+	public Game() {
+		playerOne=new Player();
+		playerTwo=new Player();
+		this.gameTurn=playerOne;
+		
 	}
-
 	/**
 	 * @return the gameWinner
 	 */
@@ -73,5 +67,16 @@ public class Game {
 	public void setPlayerTwo(Player playerTwo) {
 		this.playerTwo = playerTwo;
 	}
+
+
+	public static void main(String[] args) {
+		
+
+	}
+	
+	public void start() {
+		//System.out.println("lol");
+	}
+
 
 }
