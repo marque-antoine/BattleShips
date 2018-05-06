@@ -195,6 +195,8 @@ public class Ship {
 		if(Ship.shipLives<1) {
 			return true;
 		}
+		else 
+			return false;
 	
 	}
 

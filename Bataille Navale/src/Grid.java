@@ -5,6 +5,7 @@ public class Grid {
 	private int width=10;
 	private GridLegend[][] map;
 	
+	
 
 	public Grid() {
 		map=new GridLegend[height][width];

@@ -11,7 +11,25 @@ public class Player {
 		playerFleet= new Fleet();
 		playerGrid= new Grid();
 		
-
+	}
+	public boolean shoot(Coordinates askedCoordinate) {
+		//test part
+		
+		//shoot part
+		Coordinates.setHit(true);
+		return Coordinates.isHit();
+	}
+	public Coordinates askCoordinates() {
+		//we ask a shot position
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Which X axe coordinate would you like to hit ?");
+		String xAskedCoordinate=sc.nextLine();
+		char xAskedC=xAskedCoordinate.toUpperCase().charAt(0);
+		System.out.println("Which Y axe coordinate would you like to hit ?");
+		String yAskedCoordinate=sc.nextLine();
+		int yAskedC=Integer.parseInt(yAskedCoordinate);	
+		Coordinates askedCoordinate= new Coordinates( xAskedC, yAskedC);
+		return askedCoordinate;
 	}
 	
 	public void placeShips() {
@@ -106,10 +124,20 @@ public class Player {
 	public Grid getPlayerGrid() {
 		return playerGrid;
 	}
+	
+	public void ask() {
+		boolean shotDone=false;
+		while (!shotDone) {
+			Coordinates askedCoordinate=askCoordinates(); //we ask a shot position
+			shotDone=shoot(askedCoordinate); //we test if it's a valid shot and we return true when the shot is done
+		}
+	}
+	
+/**	
 	public guessedCoordinate() 
 	
-	public makeGuess(/**coordonnée*/) {
-
+/**	public makeGuess(/**coordonnée*//**) {
+/**
 			newShot();
 			if (Grid.emptyCoordinate()==true) {
 				System.out.println("You miss your shot, there is only water here ");
@@ -117,7 +145,7 @@ public class Player {
 			else 
 				System.out.println("Nice shot, you've hit a ship");
 			/**case we shot a ship*/
-				Ship.hitShip();
+/**				Ship.hitShip();
 				if (Ship.isSinkShip()==true) {
 					System.out.println("Congrats you sinked a ship");
 					if(Game.isOver()==true) {
@@ -130,8 +158,8 @@ public class Player {
 			
 			return null;
 			 
-	}
-	}
+	}*/
+	
 
 	
 	public void placePlayerShips() {

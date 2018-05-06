@@ -22,10 +22,11 @@ public class Main {
 	public static void main(String[] args) {
 		Game game = new Game();
         game.setup();
-        while(Game.isOver()==false) {
+        game.play();
+/**        while(Game.isOver()==false) {
         	game.play();
         }
-        
+*/        
         
         
 	}

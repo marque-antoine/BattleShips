@@ -9,7 +9,7 @@
 public class Coordinates {
 	private int yCoordinates;
 	private char xCoordinates;
-	private boolean hit = false;
+	private static boolean hit = false;
 
 	public Coordinates(char xCoordinates, int yCoordinates) {
 		this.yCoordinates = yCoordinates;
@@ -31,15 +31,15 @@ public class Coordinates {
 	/**
 	 * @return the hit
 	 */
-	public boolean isHit() {
+	public static boolean isHit() {
 		return hit;
 	}
 
 	/**
 	 * @param hit the hit to set
 	 */
-	public void setHit(boolean hit) {
-		this.hit = hit;
+	public static void setHit(boolean hit) {
+		Coordinates.hit = hit;
 	}
 
 	/**
@@ -70,11 +70,11 @@ public class Coordinates {
 		this.xCoordinates = xCoordinates;
 	}
 	
-	public boolean newShot(char xCoordinate, int yCoordinate) {
+	public static boolean newShot(char xCoordinate, int yCoordinate) {
 		boolean newShot=true;
 		return newShot;
 	}
-	public boolean existableCoordinate( char xCoordinate, int yCoordinate) {
+	public static boolean existableCoordinate( char xCoordinate, int yCoordinate) {
 		boolean existable=true;
 		return existable;
 	}

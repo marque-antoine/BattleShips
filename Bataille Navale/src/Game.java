@@ -60,7 +60,7 @@ public class Game {
 	}
 	
 	public void play() {
-		currentPlayer.makeGuess();
+		currentPlayer.ask();
 		if(currentPlayer==playerOne) {
 			currentPlayer=playerTwo;
 		}
@@ -68,10 +68,11 @@ public class Game {
 			currentPlayer=playerOne;
 	}
 	
-	public static boolean isOver() {
+/**	public static boolean isOver() {
 		boolean isOver=false
 			if()
 	}
+*/	
 	/**
 	 * @return the currentPlayer
 	 */
