@@ -14,7 +14,7 @@ public class Player {
 	}
 	public boolean shoot(Coordinates askedCoordinate) {
 		//test part
-		
+		 
 		//shoot part
 		Coordinates.setHit(true);
 		return Coordinates.isHit();

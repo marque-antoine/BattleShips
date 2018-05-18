@@ -12,6 +12,7 @@ public class Ship {
 	private Coordinates startCoordinate;
 	private Coordinates endCoordinate;
 	
+	
 	public static class Carrier extends Ship {
 		
 		private static final int shipSize= 5;
