@@ -83,7 +83,7 @@ public class AI extends Player {
 	}
 	
 	private Coordinates hardMakeGuess() {
-		return randomCoordinates();
+		return mediumMakeGuess();
 	}
 	
 	
